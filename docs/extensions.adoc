@@ -353,7 +353,8 @@ By default it retries an iteration `3` times with `0` delay if either an `Except
 In addition, an optional `condition` closure can be used to determine if a feature should be retried.
 Set `inspectCauses = true` to match `exceptions` and `skipRetryExceptions` against nested causes as well.
 A matching `skipRetryExceptions` entry anywhere in the cause chain prevents retrying, even if another exception matches `exceptions`.
-The `condition` closure still receives the original failure. Cause inspection is disabled by default.
+The `condition` closure still receives the original failure.
+Cause inspection is disabled by default.
 In its standard mode it only retries the feature method execution, but this can be changed using `mode` to
 also run setup and cleanup on retries. Even in this mode, the retry is only triggered if the feature method is failing
 in the expected way. If the setup or cleanup is failing, the test fails immediately.
